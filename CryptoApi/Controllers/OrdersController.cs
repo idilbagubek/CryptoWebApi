@@ -48,7 +48,7 @@ namespace CryptoApi.Controllers
         }
         [Authorize]
         [HttpPost("")]
-        public async Task<IActionResult> CreateItems([FromBody] CreateBuyRequest request) //get metodunda create yazmak doğru mu
+        public async Task<IActionResult> CreateItems([FromBody] CreateBuyRequest request) 
         {
             var userEmail = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Email)?.Value;
             var user = await _context.Users.FirstOrDefaultAsync(u => u.Email == userEmail);
